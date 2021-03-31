@@ -7,7 +7,9 @@
         <a href="{{ route('categories.show', ['slug'=>$category->slug]) }}"
            title="{{ $category->title }}">
             <img  alt="{{ $category->title }}"
-                                                class="animate__animated animate__backInDown" src="{{ asset('images/'. $category->slug .'.png') }}" width="40" height="40">
+                  class="animate__animated animate__backInDown"
+                  src="{{ asset('images/'. $category->slug .'.png') }}"
+                  width="40" height="40">
         </a>
     </div>
     @empty

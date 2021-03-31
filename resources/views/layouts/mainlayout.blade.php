@@ -14,8 +14,7 @@
     <title>{{ Str::title($setting->title) }} | @yield('title')</title>
 
     <!-- favicon -->
-    <!-- <link type="image/png" rel="icon" href="{{ asset('images/html-5.png') }}"> -->
-
+    <link type="image/png" rel="icon" href="{{ asset('images/sanki-icon8.png') }}">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- <link
@@ -53,8 +52,8 @@
                 {{ Str::title($setting->title) }}</a>
             </h1>
                 <div class="social-icons d-none d-lg-block d-flex justify-around">
-
-                @include('sections.socials')
+{{--                    @include('sections.socials')--}}
+                    <h4>..Programlama üzerine birçok şey...</h4>
                 </div>
 
         </div>
