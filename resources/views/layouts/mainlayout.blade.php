@@ -58,7 +58,7 @@
 
         </div>
         <!-- Site Title End -->
-        <div class="main-contentbar">
+        <div class="main-contentbar" id="maincontent" onclick="closeSide();">
             <!-- Esas Main -->
             <div class="main-content col-11 col-lg-8">
                 @yield('content')

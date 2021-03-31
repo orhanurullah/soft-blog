@@ -17,10 +17,10 @@ async function closeNav() {
     document.getElementById('menu-close-image').style.display = "none";
   document.getElementById('menu-image').style.display = "block";
   document.getElementById('mobile-close').style.display = "none";
-
-
 }
-
+function closeSide(){
+   closeNav();
+}
 function closeMobileNav(){
 
 }
