@@ -22,4 +22,7 @@ class PageController extends Controller
         // return view('welcome', ['setting' => $setting, 'categories' => $categories, 'posts' => $posts, 'codes' => $codes, 'examples' => $examples, 'catthree' => $catthree]);
         return view('index');
     }
+    public function author(){
+        return view('posts.author');
+    }
 }

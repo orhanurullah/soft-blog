@@ -5,7 +5,7 @@
     @forelse($categories as  $category)
     <div class="category">
         <a href="{{ route('categories.show', ['slug'=>$category->slug]) }}"
-           title="{{ $category->title }}">
+           title="{{ Str::title($category->title) }}">
             <img  alt="{{ $category->title }}"
                   class="animate__animated animate__backInDown"
                   src="{{ asset('images/'. $category->slug .'.png') }}"

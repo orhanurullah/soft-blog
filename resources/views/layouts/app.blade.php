@@ -19,7 +19,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdn.tiny.cloud/1/cc999dnjhn0gvnoff68m16lvkdxqdn4ufbs6cczx7fp79xdr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
+    <style>
+    .tox-notifications-container {display: none !important;}
+</style>
     @yield('head')
 </head>
 <body class="font-sans antialiased">
@@ -46,7 +48,12 @@
 <script>
     tinymce.init({
       selector: 'textarea.editor',
-      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker code codesample',
+      setup: function(editor){
+        editor.on('init change', function(){
+          editor.save();
+        });
+      },
+      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist file image imagetools media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker code codesample',
       codesample_languages: [
     { text: 'HTML/XML', value: 'markup' },
     { text: 'JavaScript', value: 'javascript' },
@@ -59,12 +66,46 @@
     { text: 'C#', value: 'csharp' },
     { text: 'C++', value: 'cpp' }
   ],
-      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table codesample',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table codesample undo redo | link image',
+      image_title : true,
+      automatic_uploads: true,
+      // images_upload_url : '/upload',
+      //images_upload_base_path:'/storage/images',
+      file_picker_types : 'file image media',
+      file_picker_callback: function (cb, value, meta) {
+        var input = document.createElement('input');
+        input.setAttribute('type', 'file');
+        input.setAttribute('accept', 'image/*');
 
+        input.onchange = function () {
+          var file = this.files[0];
+
+          var reader = new FileReader();
+          reader.onload = function () {
+
+            var id = 'blobid' + (new Date()).getTime();
+            var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+            var base64 = reader.result.split(',')[1];
+            var blobInfo = blobCache.create(id, file, base64);
+            blobCache.add(blobInfo);
+
+            /* call the callback and populate the Title field with the file name */
+            cb(blobInfo.blobUri(), { title: file.name });
+          };
+          reader.readAsDataURL(file);
+        };
+
+        input.click();
+      },
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
       toolbar_mode: 'floating',
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Author name',
+      a11y_advanced_options : true,
+     // image_prepend_url : 'http://localhost:8000/storage/images/',
+      autosave_ask_before_unload: false,
   });
+    tinymce.activeEditor.execCommand('mceImage');
 </script>
 </body>
 </html>

@@ -23,19 +23,20 @@
     /> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-    <!-- <link rel="stylesheet"
-    href="{{ asset('css/highlight/styles/androidstudio.css') }}"> -->
+    <!-- Prism Css and Js -->
     <link rel="stylesheet"
     href="{{ asset('css/prism.css') }}">
-
-   <!--  <script type="text/javascript" src="{{ asset('css/highlight/highlight.pack.js') }}"> -->
-     <script type="text/javascript" src="{{ asset('js/prism.js') }}">
+    <script type="text/javascript" src="{{ asset('js/prism.js') }}"></script>
+    <!-- Hightights css and js -->
+    <!-- <link rel="stylesheet"
+    href="{{ asset('css/highlight/styles/dracula.css') }}">
+    <script type="text/javascript" src="{{ asset('css/highlight/highlight.pack.js') }}">
     </script>
-    <!-- Styles -->
-   <!--  <script type="text/javascript">hljs.initHighlightingOnLoad();</script> -->
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script> -->
     @yield('head')
 </head>
-<body class="mybody">    <div class="wrapper">
+<body class="mybody">
+ <div class="wrapper">
         @include('sections.leftbar', ['categories' => $categories, 'setting' => $setting])
         <div class="main-left-content col-lg-2 d-none d-lg-block">
             @include('sections.category-items', ['categories' => $categories])
@@ -53,7 +54,7 @@
             </h1>
                 <div class="social-icons d-none d-lg-block d-flex justify-around">
 {{--                    @include('sections.socials')--}}
-                    <h4>..Programlama üzerine birçok şey...</h4>
+                    <h4>Yazılım ve programlama üzerine birkaç şey...</h4>
                 </div>
 
         </div>

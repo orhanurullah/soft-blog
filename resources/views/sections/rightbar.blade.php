@@ -10,7 +10,7 @@
     </div> -->
     <div class="position-absolute top-10 end-0">
         <div class="company-name">
-            {{ Str::slug($setting->title, '') }}
+            {{ Str::slug($setting->title, '-') }}
         </div>
         <hr class="line">
         @forelse($categories as $cat)
@@ -18,7 +18,7 @@
         @empty
         @endforelse
         <div class="company-name">
-            {{ Str::slug($setting->title, '') }}
+            {{ Str::slug($setting->title, '-') }}
         </div>
     </div>
 </div>

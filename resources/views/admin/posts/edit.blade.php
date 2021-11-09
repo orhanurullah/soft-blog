@@ -4,7 +4,7 @@
     <h2 class="pl-4">Makale Düzenleme Sayfası</h2>
 </div>
 <div class="form-group">
-    <form action="{{ route('admin.posts.update', ['id' => $post->id]) }}" method="POST">
+    <form action="{{ route('admin.posts.update', ['id' => $post->id]) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="form-group p-2">

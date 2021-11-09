@@ -22,7 +22,7 @@
         </div>
         <div class="form-group p-2">
              <select name="parent_id" class="form-control" required="">
-                <option value="{{ $category->id }}">{{ $category->title }}</option>
+                <option value="0">{{  __('Main')}}</option>
                  @forelse($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
                 @empty

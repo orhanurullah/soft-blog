@@ -14,7 +14,7 @@ a:hover{
   color:inherit;
 }
 .copybutton{
-  background-color: orange;
+  background-color: darkorange;
   border:none;
   border-radius: 5px;
   padding:2px 5px;
@@ -22,8 +22,7 @@ a:hover{
   color:white;
 }
 .copybutton:hover{
-  background-color: aqua;
-  color:inherit;
+  background-color: #14000A;
 }
 ::-webkit-scrollbar{
   width: 10px;

@@ -2,18 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', 'PageController@index')->name('index');
+Route::get('/', 'PageController@index')->name('home');
+Route::get('/author', [\App\Http\Controllers\PageController::class, 'author'])->name('author');
 Route::get('/kategoriler', 'CategoryController@index')->name('categories.index');
 Route::get('/kategori/{slug}', 'CategoryController@show')->name('categories.show');
 Route::get('/{slug_c}/{slug}', 'PostController@show')->name('posts.show');
@@ -22,6 +12,7 @@ Route::get('{slug_c}/kod/{slug}', 'CodeController@show')->name('codes.show');
 
 Route::middleware('auth')->group(function(){
     Route::get('dashboard', 'AdminController@index')->name('dashboard');
+    Route::post('upload', 'FileController@store');
     Route::prefix('dashboard')->group(function () {
         Route::get('/posts/full', 'PostController@index')->name('admin.posts.index');
          Route::get('/post/create', 'PostController@create')->name('admin.posts.create');

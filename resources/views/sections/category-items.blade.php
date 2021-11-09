@@ -6,7 +6,7 @@
       </a>
 </div>
    @include('sections.deneme')
-<div class="copyright mt-3">
+   <div class="copyright mt-5">
      {{ Str::slug($setting->title, '') }}&copy;{{ date('Y') }}
 </div>
 </div>
