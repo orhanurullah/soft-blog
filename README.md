@@ -7,56 +7,74 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+### Soft Blog
+Soft Blog, yazılım ve kod üzerine kurulu, modern ve kullanıcı dostu bir blog platformudur. Yazılımcılar, yazılım meraklıları ve topluluk üyeleri için; makaleler, rehberler, kod örnekleri ve güncel yazılım haberlerinin paylaşıldığı zengin bir içerik platformu sunar. Laravel tabanlı bu uygulama, esnek altyapısı ve güçlü özellikleriyle öne çıkar.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### Özellikler
+Makale ve Blog Yönetimi:
+Kullanıcılar kendi yazılarını oluşturabilir, kategorilere ayırabilir ve paylaşabilir. Markdown desteğiyle kod blokları ekleyebilirler.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#### Kod Vurgulama ve Paylaşımı:
+Blog yazılarında farklı programlama dillerinde kod blokları eklenebilir ve sentaks vurgulama (syntax highlighting) ile okunabilirlik artırılır.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Kategori ve Etiket Sistemi:
+Yazılar, kategorilere ve isteğe bağlı olarak birden fazla etikete atanabilir. Kullanıcılar ilgilendikleri konulara kolayca ulaşabilirler.
 
-## Learning Laravel
+#### Yorum ve Geri Bildirim:
+Her makale altında kullanıcılar yorum bırakabilir, sorular sorabilir ve tartışmalara katılabilir.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Kullanıcı Profilleri ve Takip:
+Her kullanıcının profil sayfası bulunur. Kullanıcılar birbirini takip edebilir, favori yazarlarını ve içeriklerini izleyebilir.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Arama ve Filtreleme:
+Anahtar kelime, kategori, etiket, yazar veya tarih aralığına göre içeriklerde arama ve filtreleme yapılabilir.
 
-## Laravel Sponsors
+#### Popüler ve Önerilen İçerikler:
+En çok okunan ve önerilen yazılar ana sayfada öne çıkarılır.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Bildirimler:
+Yorumlara yanıt alındığında, yeni takipçi geldiğinde veya ilgilendiği kategoride yeni bir yazı yayınlandığında kullanıcıya otomatik bildirim iletilir.
 
-### Premium Partners
+#### Mobil Uyumluluk:
+Responsive tasarımı sayesinde masaüstü ve mobil cihazlarda sorunsuz deneyim sunar.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+#### Yönetici Paneli:
+Kategoriler, kullanıcılar ve içerikler üzerinde detaylı yönetim ve moderasyon imkanı.
 
-## Contributing
+#### Çoklu Dil Desteği:
+Türkçe başta olmak üzere çoklu dil desteği ile geniş kitlelere hitap eder.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Kurulum
+Depoyu klonlayın:
 
-## Code of Conduct
+#### bash
+git clone https://github.com/orhanurullah/soft-blog.git
+Gereksinimleri yükleyin:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### bash
+composer install
+npm install && npm run dev
+Ortam değişkenlerini ayarlayın:
 
-## Security Vulnerabilities
+#### bash
+cp .env.example .env
+php artisan key:generate
+.env dosyasında veritabanı ayarlarınızı ve gerekli diğer yapılandırmaları tamamlayın.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Veritabanı migrasyonlarını çalıştırın:
 
-## License
+#### bash
+php artisan migrate
+(İsteğe bağlı) Varsayılan içerikleri yüklemek için:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### bash
+php artisan db:seed
+Uygulamayı başlatın:
+
+#### bash
+php artisan serve
+Katkı ve Geliştirme
+Katkıda bulunmak için lütfen depoyu fork’layın, yeni bir branch açın ve pull request gönderin. Her türlü öneri ve geri bildirim için issue oluşturabilirsiniz.
+
+### Lisans
+Bu proje MIT lisansı ile lisanslanmıştır.
